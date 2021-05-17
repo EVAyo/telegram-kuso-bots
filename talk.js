@@ -45,6 +45,10 @@ const updateCorpus = () => {
             const payload = {};
 
             if (obj.text) {
+                if (obj.text.match(/@\w+|\/\w+|:\/\//)) {
+                    continue;
+                }
+
                 payload.text = obj.text;
             }
 
